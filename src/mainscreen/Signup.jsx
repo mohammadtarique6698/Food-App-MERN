@@ -51,9 +51,9 @@ const Signup = () => {
           }
         );
         if (response.data.success) {
+          localStorage.setItem("userName", credentials.name); // Save user name to local storage
           enqueueSnackbar("User is Created", {
             variant: "success",
-
             onClose: () => {
               window.location.href = "/login";
             },

@@ -37,17 +37,17 @@ const Login = () => {
       );
       if (response.data.success) {
         const json = response.data;
-        console.log(json);
+        //console.log(json);
         localStorage.setItem("email", credentials.email);
         localStorage.setItem("token", json.authToken);
         enqueueSnackbar("Login successful", {
           variant: "success",
-          onClose: () => {
-            window.location.href = "/";
-          },
           anchorOrigin: {
             vertical: "top",
             horizontal: "center",
+          },
+          onClose: () => {
+            window.location.href = "/";
           },
           autoHideDuration: 3000,
           preventDuplicate: true,
